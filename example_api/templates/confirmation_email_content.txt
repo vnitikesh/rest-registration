@@ -1,0 +1,26 @@
+<center>
+<h2>{{ dict.shop_name }}</h2>
+</center>
+<h4>
+Dear {{ user.username }},Please to inform that your order has been successfully placed.
+<br>
+We are also sending you the complete billing information.
+</h4>
+<center style = "color: black; border: 1px solid black">
+<b>Items Ordered------------>Quantity-------->Total</b>
+<ol>
+
+{% for k,v in dict.items %}
+<li>
+<b>
+{{ k }}----------->
+{% for j in v %}
+
+{{ j }}
+{% endfor %}
+</b>
+</li>
+{% endfor %}
+</ol>
+
+</center>

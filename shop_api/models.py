@@ -16,7 +16,7 @@ class Shop(models.Model):
     def __str__(self):
         return self.shop_name
 
-
+'''
 class Category(models.Model):
     shop = models.ForeignKey(Shop, related_name = 'categories', on_delete = models.CASCADE)
     name = models.CharField(max_length = 255, blank = True, null = True)
@@ -39,3 +39,4 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+'''

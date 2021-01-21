@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy
 from django.contrib.auth import get_user_model
 from django.template.loader import render_to_string
 from django.core.mail import EmailMultiAlternatives
+
 import hashlib
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone

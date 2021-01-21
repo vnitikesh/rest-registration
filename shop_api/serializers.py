@@ -1,4 +1,4 @@
-from .models import Shop, Category, Product
+from .models import Shop
 from rest_framework import serializers
 
 
@@ -20,31 +20,3 @@ class ShopSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Shop
         fields = ('url', 'id', 'shop_name', 'owner', 'delivery_time', 'discount_coupon', 'rating', 'categories')
-
-
-class CategoryListSerializer(serializers.ModelSerializer):
-    shop = SlugRelatedModuleField(slug_field = 'shop_name')
-    #shop = ShopSerializer(read_only = True)
-
-    class Meta:
-        model = Category
-        fields = ('id', 'shop', 'name')
-'''
-class CategoryRelatedModuleField(serializers.SlugRelatedField):
-    def get_queryset(self):
-        queryset = Category.objects.all(shop = )
-'''
-
-class ProductSerializer(serializers.ModelSerializer):
-    shop = SlugRelatedModuleField(slug_field = 'shop_name')
-    class Meta:
-        model = Product
-        fields = ('shop', 'id', 'name', 'price', 'available', )
-
-class CategoryDetailSerializer(serializers.HyperlinkedModelSerializer):
-    shop = ShopSerializer(read_only = True)
-    product = ProductSerializer(read_only = True)
-
-    class Meta:
-        model = Category
-        fields = ('id', 'shop', 'name', 'product')

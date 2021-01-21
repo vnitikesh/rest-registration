@@ -29,9 +29,9 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('users/', include('user_api.urls')),
     path('shops/', include('shop_api.urls')),
-    path('category-list/', views.AddCategory.as_view(), name = 'category-list'),
-    path('category-detail/<int:pk>/', views.CategoryDetail.as_view(), name = 'category-detail'),
-    path('product-list/', views.ProductList.as_view(), name = 'product-list'),
+    #path('category-list/', views.AddCategory.as_view(), name = 'category-list'),
+    #path('category-detail/<int:pk>/', views.CategoryDetail.as_view(), name = 'category-detal'),
+    #path('product-list/', views.ProductList.as_view(), name = 'product-list'),
     path('ex/', include('example_api.urls')),
     path('cart/', include('cartapi.urls')),
 ]
